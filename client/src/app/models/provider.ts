@@ -8,5 +8,10 @@ export interface Provider{
     pvalue2:number;
     pvalue3:number;
     pvalue4:number;
+}
 
+export interface coordinates{
+    i: number;
+    j: number;
+    v: number;
 }

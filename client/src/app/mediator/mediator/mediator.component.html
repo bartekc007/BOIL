@@ -8,38 +8,83 @@
     <form #inputAreaForm="ngForm" (ngSubmit)="submitData()" autocomplete="off" class="mt-5">
         <div class="row ">
             <div class="data-container ml-5">
-                <div class="form-group row pr-5">
-                    <label for="provider1" >Provider 1: </label>
-                    <input type="text" class="form-control" 
+                <div class="row">
+                    <div class="form-group pr-5">
+                        <label for="provider1" >Provider 1: supply </label>
+                        <input type="text" class="form-control" 
                         name="provider1" [(ngModel)]="providers[0]" placeholder="value">
+                    </div>
+                    <div class="form-group pr-5">
+                        <label for="provider1" >sale </label>
+                        <input type="text" class="form-control" 
+                        name="provider1" [(ngModel)]="providersSales[0]" placeholder="value">
+                    </div>
+                    
                 </div>
-                <div class="form-group row pr-5">
-                    <label for="provider2">Provider 2: </label>
-                    <input type="text" class="form-control" 
-                        name="provider2" [(ngModel)]="providers[1]" placeholder="value">
+                <div class="row">
+                    <div class="form-group pr-5">
+                        <label for="provider2">Provider 2: supply </label>
+                        <input type="text" class="form-control" 
+                            name="provider2" [(ngModel)]="providers[1]" placeholder="value">
+                    </div>
+                    <div class="form-group pr-5">
+                        <label for="provider2">sale</label>
+                        <input type="text" class="form-control" 
+                            name="provider2" [(ngModel)]="providersSales[1]" placeholder="value">
+                    </div>
                 </div>
+                
             </div>
             <div class="data-container">
-                <div class="form-group row">
-                    <label for="customer1">Customer 1: </label>
-                    <input type="text" class="form-control" 
-                        name="customer1" [(ngModel)]="customers[0]" placeholder="value">
+                <div class="row">
+                    <div class="form-group pr-5">
+                        <label for="customer1">Customer 1: demand</label>
+                        <input type="text" class="form-control" 
+                            name="customer1" [(ngModel)]="customers[0]" placeholder="value">
+                    </div>
+                    <div class="form-group pr-5">
+                        <label for="customer1">cost </label>
+                        <input type="text" class="form-control" 
+                            name="customer1" [(ngModel)]="customersCosts[0]" placeholder="value">
+                    </div>
                 </div>
-                <div class="form-group row">
-                    <label for="customer2">Customer 2: </label>
-                    <input type="text" class="form-control" 
-                        name="customer2" [(ngModel)]="customers[1]" placeholder="value">
+                <div class="row">
+                    <div class="form-group pr-5">
+                        <label for="customer2">Customer 2: demand</label>
+                        <input type="text" class="form-control" 
+                            name="customer2" [(ngModel)]="customers[1]" placeholder="value">
+                    </div>
+                    <div class="form-group pr-5">
+                        <label for="customer2">cost</label>
+                        <input type="text" class="form-control" 
+                            name="customer2" [(ngModel)]="customersCosts[1]" placeholder="value">
+                    </div>
                 </div>
-                <div class="form-group row">
-                    <label for="customer3">Customer 3: </label>
-                    <input type="text" class="form-control" 
-                        name="customer3" [(ngModel)]="customers[2]" placeholder="value">
+                <div class="row">
+                    <div class="form-group pr-5">
+                        <label for="customer3">Customer 3: demand</label>
+                        <input type="text" class="form-control" 
+                            name="customer3" [(ngModel)]="customers[2]" placeholder="value">
+                    </div>
+                    <div class="form-group pr-5">
+                        <label for="customer3">cost</label>
+                        <input type="text" class="form-control" 
+                            name="customer3" [(ngModel)]="customersCosts[2]" placeholder="value">
+                    </div>
                 </div>
-                <div class="form-group row">
-                    <label for="customer4">Customer 4: </label>
-                    <input type="text" class="form-control" 
-                        name="customer4" [(ngModel)]="customers[3]" placeholder="value">
+                <div class="row">
+                    <div class="form-group pr-5">
+                        <label for="customer4">Customer 4: demand</label>
+                        <input type="text" class="form-control" 
+                            name="customer4" [(ngModel)]="customers[3]" placeholder="value">
+                    </div>
+                    <div class="form-group pr-5">
+                        <label for="customer4">cost</label>
+                        <input type="text" class="form-control" 
+                            name="customer4" [(ngModel)]="customersCosts[3]" placeholder="value">
+                    </div>
                 </div>
+                
             </div>
             <div class="data-container text-center">
                 <table class="table">
