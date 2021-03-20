@@ -1,0 +1,106 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Mediator</a>
+
+</nav>
+
+<div class="container">
+
+    <form #inputAreaForm="ngForm" (ngSubmit)="submitData()" autocomplete="off" class="mt-5">
+        <div class="row ">
+            <div class="data-container ml-5">
+                <div class="form-group row pr-5">
+                    <label for="provider1" >Provider 1: </label>
+                    <input type="text" class="form-control" 
+                        name="provider1" [(ngModel)]="providers[0]" placeholder="value">
+                </div>
+                <div class="form-group row pr-5">
+                    <label for="provider2">Provider 2: </label>
+                    <input type="text" class="form-control" 
+                        name="provider2" [(ngModel)]="providers[1]" placeholder="value">
+                </div>
+            </div>
+            <div class="data-container">
+                <div class="form-group row">
+                    <label for="customer1">Customer 1: </label>
+                    <input type="text" class="form-control" 
+                        name="customer1" [(ngModel)]="customers[0]" placeholder="value">
+                </div>
+                <div class="form-group row">
+                    <label for="customer2">Customer 2: </label>
+                    <input type="text" class="form-control" 
+                        name="customer2" [(ngModel)]="customers[1]" placeholder="value">
+                </div>
+                <div class="form-group row">
+                    <label for="customer3">Customer 3: </label>
+                    <input type="text" class="form-control" 
+                        name="customer3" [(ngModel)]="customers[2]" placeholder="value">
+                </div>
+                <div class="form-group row">
+                    <label for="customer4">Customer 4: </label>
+                    <input type="text" class="form-control" 
+                        name="customer4" [(ngModel)]="customers[3]" placeholder="value">
+                </div>
+            </div>
+            <div class="data-container text-center">
+                <table class="table">
+                    <tr class="table-success">
+                        <th></th>
+                        <th>Customer 1</th>
+                        <th>Customer 2</th>
+                        <th>Customer 3</th>
+                        <th>Customer 4</th>
+                    </tr>
+                    <tr>
+                        <th class="table-success">Provider 1</th>
+                        <td class="table-active">
+                            <input type="text" class="form-control" 
+                            name="transport00" [(ngModel)]="transport[0][0]" placeholder="value">
+                        </td>
+                        <td class="table-active">
+                            <input type="text" class="form-control" 
+                            name="transport01" [(ngModel)]="transport[0][1]" placeholder="value">
+                        </td>
+                        <td class="table-active">
+                            <input type="text" class="form-control" 
+                            name="transport02" [(ngModel)]="transport[0][2]" placeholder="value">
+                        </td>
+                        <td class="table-active">
+                            <input type="text" class="form-control" 
+                            name="transport03" [(ngModel)]="transport[0][3]" placeholder="value">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="table-success">Provider 2</th>
+                        <td class="table-active">
+                            <input type="text" class="form-control" 
+                            name="transport10" [(ngModel)]="transport[1][0]" placeholder="value">
+                        </td>
+                        <td class="table-active">
+                            <input type="text" class="form-control" 
+                            name="transport11" [(ngModel)]="transport[1][1]" placeholder="value">
+                        </td>
+                        <td class="table-active">
+                            <input type="text" class="form-control" 
+                            name="transport12" [(ngModel)]="transport[1][2]" placeholder="value">
+                        </td>
+                        <td class="table-active">
+                            <input type="text" class="form-control" 
+                            name="transport13" [(ngModel)]="transport[1][3]" placeholder="value">
+                        </td>
+                    </tr>
+                </table>
+            </div>    
+        </div>
+        <div class="data-container row">
+            <button class="btn btn-success" type="submit">Submit</button>
+            <label *ngIf="result" name="result" [result]="result"></label>
+        </div>
+        
+
+        <br>
+        <label> {{result}} </label>
+        
+    </form>
+</div>
+
+

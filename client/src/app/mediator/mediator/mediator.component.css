@@ -1,0 +1,9 @@
+.data-container {
+    display: inline-block;
+}
+
+.container {
+    position: relative;
+    top: 50%;
+    
+}
