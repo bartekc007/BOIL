@@ -45,7 +45,7 @@
                     <div class="form-group pr-5">
                         <label for="customer1">cost </label>
                         <input type="text" class="form-control" 
-                            name="customer1" [(ngModel)]="customersCosts[0]" placeholder="value">
+                            name="customercost1" [(ngModel)]="customersCosts[0]" placeholder="value">
                     </div>
                 </div>
                 <div class="row">
@@ -57,7 +57,7 @@
                     <div class="form-group pr-5">
                         <label for="customer2">cost</label>
                         <input type="text" class="form-control" 
-                            name="customer2" [(ngModel)]="customersCosts[1]" placeholder="value">
+                            name="customercost2" [(ngModel)]="customersCosts[1]" placeholder="value">
                     </div>
                 </div>
                 <div class="row">
@@ -69,7 +69,7 @@
                     <div class="form-group pr-5">
                         <label for="customer3">cost</label>
                         <input type="text" class="form-control" 
-                            name="customer3" [(ngModel)]="customersCosts[2]" placeholder="value">
+                            name="customercost3" [(ngModel)]="customersCosts[2]" placeholder="value">
                     </div>
                 </div>
                 <div class="row">
@@ -81,7 +81,7 @@
                     <div class="form-group pr-5">
                         <label for="customer4">cost</label>
                         <input type="text" class="form-control" 
-                            name="customer4" [(ngModel)]="customersCosts[3]" placeholder="value">
+                            name="customercost4" [(ngModel)]="customersCosts[3]" placeholder="value">
                     </div>
                 </div>
                 
@@ -136,16 +136,90 @@
                 </table>
             </div>    
         </div>
+        
         <div class="data-container row">
-            <button class="btn btn-success" type="submit">Submit</button>
-            <label *ngIf="result" name="result" [result]="result"></label>
+            <button class="btn btn-success mr-3" type="submit">Submit</button>
+            <button class="btn btn-success" (click)="resetForm()" >Reset</button>
         </div>
-        
-
-        <br>
-        <label> {{result}} </label>
-        
     </form>
+
+    <div class="row mt-3" *ngIf="isResultVisible">
+        <div class="data-container text-center">
+            <table class="table">
+                <tr class="table-success">
+                    <th></th>
+                    <th>Customer 1</th>
+                    <th>Customer 2</th>
+                    <th>Customer 3</th>
+                    <th>Customer 4</th>
+                </tr>
+                <tr>
+                    <th class="table-success">Provider 1</th>
+                    <td class="table-active">
+                        <input type="text" class="form-control" readonly
+                        name="finalResultRoutesValue00" [(ngModel)]="finalResultRoutesValue[0][0]" placeholder="value">
+                    </td>
+                    <td class="table-active">
+                        <input type="text" class="form-control" readonly
+                        name="finalResultRoutesValue01" [(ngModel)]="finalResultRoutesValue[0][1]" placeholder="value">
+                    </td>
+                    <td class="table-active">
+                        <input type="text" class="form-control" readonly
+                        name="finalResultRoutesValue02" [(ngModel)]="finalResultRoutesValue[0][2]" placeholder="value">
+                    </td>
+                    <td class="table-active">
+                        <input type="text" class="form-control" readonly
+                        name="finalResultRoutesValue03" [(ngModel)]="finalResultRoutesValue[0][3]" placeholder="value">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="table-success">Provider 2</th>
+                    <td class="table-active">
+                        <input type="text" class="form-control" readonly
+                        name="finalResultRoutesValue10" [(ngModel)]="finalResultRoutesValue[1][0]" placeholder="value">
+                    </td>
+                    <td class="table-active">
+                        <input type="text" class="form-control" readonly
+                        name="finalResultRoutesValue11" [(ngModel)]="finalResultRoutesValue[1][1]" placeholder="value">
+                    </td>
+                    <td class="table-active">
+                        <input type="text" class="form-control" readonly
+                        name="finalResultRoutesValue12" [(ngModel)]="finalResultRoutesValue[1][2]" placeholder="value">
+                    </td>
+                    <td class="table-active">
+                        <input type="text" class="form-control" readonly
+                        name="finalResultRoutesValue13" [(ngModel)]="finalResultRoutesValue[1][3]" placeholder="value">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <table class="table">
+                <tr>
+                    <th class="table-success">income</th>
+                    <td class="table-active">
+                        <input type="text" class="form-control" readonly
+                        name="transport00" [(ngModel)]="this.income" placeholder="value">
+                    </td> 
+                </tr>
+                <tr>
+                    <th class="table-success">outcome</th>
+                    <td class="table-active">
+                        <input type="text" class="form-control" readonly
+                        name="transport00" [(ngModel)]="this.outcome" placeholder="value">
+                    </td> 
+                </tr>
+                <tr>
+                    <th class="table-success">profit</th>
+                    <td class="table-active">
+                        <input type="text" class="form-control" readonly
+                        name="transport00" [(ngModel)]="this.result" placeholder="value">
+                    </td> 
+                </tr>
+            </table>
+        </div>
+    </div>
+    
 </div>
 
 

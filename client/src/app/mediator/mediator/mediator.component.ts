@@ -1,5 +1,6 @@
 import { summaryFileName } from '@angular/compiler/src/aot/util';
-import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, HostListener, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { coordinates, Provider } from 'src/app/models/provider'
 
 @Component({
@@ -8,20 +9,28 @@ import { coordinates, Provider } from 'src/app/models/provider'
   styleUrls: ['./mediator.component.css']
 })
 export class MediatorComponent implements OnInit {
+
   // providers: number[] = new Array(2);
   // providersSales: number[] = new Array(2);
   // customers: number[] = new Array(4);
   // customersCosts: number[] = new Array(4);
   // transport: number[][] = new Array(2).fill(0).map(x => new Array(4))
   // isPPEqual: boolean = true;
+
   providers: number[] = [25,35];
   providersSales: number[] = [10,12];
   customers: number[] = [12,18,14,16];
   customersCosts: number[] = [20,22,25,30];
   transport: number[][] = [[1,3,2,4],[6,5,8,7]];
-  isPPEqual: boolean = true;
+  finalResultRoutesValue: number[][] = new Array(2).fill(0).map(x=> new Array(4));
 
   result: number=0;
+  income: number=0;
+  outcome: number=0;
+
+  isPPEqual: boolean = true;
+  isResultVisible:boolean = false;
+  isResetVisible:boolean = false;
 
   constructor() {}
 
@@ -99,19 +108,31 @@ export class MediatorComponent implements OnInit {
 
     console.log('after cycle: ' + routsValues);
       counter++;
-    } while (counter < 3);
+    } while (!flag);
     
     
     for (let i = 0; i < routsValues.length; i++) {
       for (let j = 0; j < routsValues[i].length; j++) {
         this.result += routsValues[i][j] * oneRoutProfit[i][j];
-        
-      }
-      
+        this.income += this.customersCosts[j] * routsValues[i][j];
+         
+      }  
     }
-
-    
+  this.outcome += this.income - this.result;
+  this.finalResultRoutesValue = [...routsValues];
+  this.isResultVisible = true;
+  this.isResetVisible = true;
   }  
+
+  resetForm() {
+    this.providers = new Array(2);
+    this.providersSales = new Array(2);
+    this.customers = new Array(4);
+    this.customersCosts = new Array(4);
+    this.transport = new Array(2).fill(0).map(x => new Array(4))
+    this.isResetVisible = false;
+    this.isResultVisible = false;
+  }
 
   getMaxBubble(array: number[][]){
     let result: coordinates[] = [];
